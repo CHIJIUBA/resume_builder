@@ -2,7 +2,7 @@ export function ResumeBody() {
     return (
         <section className="resumebody">
             <div className={"personalDetilsSection"}>
-                <h3 id={"fullName"}>Chijiuba Victory</h3>
+                <h3 id={"fullName"}>Chijiuba Michael</h3>
                 <p id={"addressDisplay"}><span>Ikeja, Lagos Nigeria</span> | <span>+234 8132547926</span> | <span>chijiubaonyedikachukwu@gmail.com</span> | <span>www.linkedin.com/in/chijiubavictory</span></p>
                 <p id={"summaryDisplay"}>A Computer Science graduate with fundamental knowledge of software design and development. Seeking to utilize broad
                 educational background with excellent analytical, technical, and programming skills to thrive as software engineer.</p>
