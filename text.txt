@@ -2,4 +2,4 @@ https://resume-builder-sable-five.vercel.app/
 
 npm run dev
 
-https://cv-builder-nine-self.vercel.app/
+https://cv-builder-nine-self.vercel.app/ 

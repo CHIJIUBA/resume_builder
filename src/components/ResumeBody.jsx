@@ -1,12 +1,33 @@
+function PersonalDetails(props) {
+
+    const { details } = props;
+
+    return (
+        <div className={"personalDetilsSection"}>
+            <h3 id={"fullName"}>{details.fullName}</h3>
+            <p id={"addressDisplay"}>{details.address} | {details.phoneNumber} | {details.email} | {details.linkedInProfile}</p>
+            <p id={"summaryDisplay"}>{details.profileSummary}</p>
+        </div>
+    )
+}
+
+
+
 export function ResumeBody() {
+
+    const details = {
+        fullName: "Chijiuba Victory",
+        address: "Ikeja, Lagos Nigeria",
+        phoneNumber: "+234 8132547926",
+        email: "chijiubaonyedikachukwu@gmail.com",
+        linkedInProfile: "www.linkedin.com/in/chijiubavictory",
+        profileSummary: "A Computer Science graduate with fundamental knowledge of software design and development. Seeking to utilize broadeducational background with excellent analytical, technical, and programming skills to thrive as software engineer."
+    }
+
     return (
         <section className="resumebody">
-            <div className={"personalDetilsSection"}>
-                <h3 id={"fullName"}>Chijiuba Michael</h3>
-                <p id={"addressDisplay"}><span>Ikeja, Lagos Nigeria</span> | <span>+234 8132547926</span> | <span>chijiubaonyedikachukwu@gmail.com</span> | <span>www.linkedin.com/in/chijiubavictory</span></p>
-                <p id={"summaryDisplay"}>A Computer Science graduate with fundamental knowledge of software design and development. Seeking to utilize broad
-                educational background with excellent analytical, technical, and programming skills to thrive as software engineer.</p>
-            </div>
+
+            <PersonalDetails details={details}/>
 
             <div className={"resumeSections"}>
                 <h3>EDUCATION</h3>
@@ -74,17 +95,14 @@ export function ResumeBody() {
                 <div className={"innerSections"}>
                     <section>
                         <h3 className="institution">ONLINE PAYMENT APPLICATION</h3>
-                        <p>Information Technology Officer</p>
-                    </section>
-                    <section>
-                        <h3>Nsukka, Enugu</h3>
-                        <p><i>Nov 2017 - Nov 2022</i></p>
+                        <p><i>https://github.com/CHIJIUBA/Payment-Application-VioPay</i></p>
                     </section>
                 </div>
+                <p><b>Description:</b> Online payment application that enables users to make secure and seamless online transactions.</p>
                 <ul className={"listOfDuties"}>
-                    <li>Microsoft Excel, Microsoft Word, Visual Studio Code and Postman</li>
-                    <li>Python, Java, C, HTML, CSS, JavaScript, Linux, API Development Fastapi</li>
-                    <li>Communication, Problem-solving, Teamwork, Adaptability</li>
+                    <li>Developed dynamic components for the app and created a new landing page that streamlined customer
+                    experience</li>
+                    <li>Learned to connect and use MySQL in PHP and integrate Flutterwave APIs for seamless payment processing</li>
                 </ul>
             </div>
             

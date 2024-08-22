@@ -179,7 +179,7 @@ label {
 .resumebody {
     background-color: #fff;
     border-radius: 5px;
-    padding: 45px;
+    padding: 45px 65px;
     width: 70vw;
     overflow-y: scroll;
     scrollbar-color: gray #ebf0fa;
