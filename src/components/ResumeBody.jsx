@@ -9,8 +9,25 @@ function PersonalDetails({details}) {
     )
 }
 
-function EducationDetails() {
-    return (console.log("hello world"));
+function EducationDetails({details}) {
+
+    return (
+        <div className={"resumeSections"}>
+            <h3>EDUCATION</h3>
+            <div className={"innerSections"}>
+                <section>
+                    <h3 className="institution">{details.school}</h3>
+                    <p>{details.degree}</p>
+                </section>
+                <section>
+                    <h3>{details.location}</h3>
+                    <p><i>{details.eduStartDate} - {details.eduEndDate}</i></p>
+                </section>
+            </div>
+            <p id="courseWork"><b>Relevant Coursework: </b>{details.courseWork}</p>
+        </div>
+
+    )
 }
 
 
@@ -18,27 +35,12 @@ function EducationDetails() {
 export function ResumeBody({details, education}) {
 
     const personalDetails = details;
-    // const educationDetails = education;
 
     return (
         <section className="resumebody">
 
             <PersonalDetails details={personalDetails} />
-
-            <div className={"resumeSections"}>
-                <h3>EDUCATION</h3>
-                <div className={"innerSections"}>
-                    <section>
-                        <h3 className="institution">{education.school}</h3>
-                        <p>{education.degree}</p>
-                    </section>
-                    <section>
-                        <h3>{education.location}</h3>
-                        <p><i>{education.eduStartDate} - {education.eduEndDate}</i></p>
-                    </section>
-                </div>
-                <p id="courseWork"><b>Relevant Coursework: </b>{education.courseWork}</p>
-            </div>
+            <EducationDetails details={education} />
 
             <div className={"resumeSections"}>
                 <h3>PROFESSIONAL EXPERIENCE</h3>

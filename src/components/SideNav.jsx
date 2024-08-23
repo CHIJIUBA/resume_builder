@@ -41,9 +41,6 @@ export function SideNav() {
 
     }
 
-    
-        
-
     return(
         <>
         <section className={"side-nav"}>
