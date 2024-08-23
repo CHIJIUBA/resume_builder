@@ -173,6 +173,28 @@ label {
     color: #3366cc; 
 }
 
+/* .submitButton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.submitButton button {
+    padding: 5px 25px;
+    box-sizing: border-box;
+    background-color: #ebf0fa;
+    border: 1px solid #3366cc;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+} */
+
+.submitButton button:hover {
+    background-color: #fff;
+}
+
+
 /* the end of the side navbar styling  */
 
 /* start of the resume body styling */

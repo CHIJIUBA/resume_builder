@@ -1,15 +1,15 @@
 import { useState } from 'react';
+import {personalDetails} from "./data"
+import { ResumeBody } from './ResumeBody';
 
-function LabelInput({label, inputId, value, setName}) {
+function LabelInput({label, inputId, handlerFunction}) {
     return (
         <>
             <label htmlFor={inputId}>{label}</label>
-            <input type="text"  id={inputId} value={value}/>
+            <input type="text"  id={inputId} onChange={handlerFunction}/>
         </>
     )
 }
-
-// onChange={e => setFullName(e.target.value)}
 
 function LabelTextArea({label, inputId}) {
     return (
@@ -21,27 +21,36 @@ function LabelTextArea({label, inputId}) {
 }
 
 
-
-
-
 export function SideNav() {
 
-    const [fullName, setFullName] = useState("Chijiuba Micheal");
+    const [fullName, setPersonalDetails] = useState(personalDetails);
 
-    function handleChange(e) {
-        setFullName(e.target.value)
+    function handlePersonalDetails(e) {
+
+        if(e.target.id == "fullNameInput"){
+            personalDetails.fullName = e.target.value;
+            setPersonalDetails(personalDetails.fullName);
+        }
+        else if(e.target.id == "addressInput"){
+            personalDetails.address = e.target.value;
+            setPersonalDetails(personalDetails.address);
+        }
+        else if(e.target.id == "emailInput"){
+            personalDetails.email = e.target.value;
+            setPersonalDetails(personalDetails.email);
+        }
     }
+        
 
     return(
+        <>
         <section className={"side-nav"}>
             <div className={"personaldetails"}>
-                <h3>{fullName}</h3>
-                <label htmlFor={"fullNameInput"}>Full Name</label>
-                <input type="text"  id={"fullNameInput"} value={fullName} onChange={e => setFullName(e.target.value)}/>
-                {/* <LabelInput  label={"Full Name"} inputId={"fullNameInput"}  value={fullName} setName={handleChange}/> */}
-                <LabelInput  label={"Email"} inputId={"emailInput"} />
+                <h3>Personal Details</h3>
+                <LabelInput  label={"Full Name"} inputId={"fullNameInput"}  handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Email"} inputId={"emailInput"} handlerFunction={handlePersonalDetails} />
                 <LabelInput  label={"Phone Number"} inputId={"phoneNumber"} />
-                <LabelInput  label={"Address"} inputId={"addressInput"} />
+                <LabelInput  label={"Address"} inputId={"addressInput"} handlerFunction={handlePersonalDetails} />
                 <LabelInput  label={"Summary"} inputId={"summaryInput"} />
                 <LabelInput  label={"LinkedIn Profile"} inputId={"linkedinput"} />
             </div>
@@ -65,5 +74,7 @@ export function SideNav() {
                 <LabelTextArea label={"Description"} inputId={"expDescription"} />
             </div>
         </section>
+        <ResumeBody details={personalDetails} />
+        </>
     )
 }

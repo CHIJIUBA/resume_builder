@@ -1,7 +1,5 @@
-function PersonalDetails(props) {
-
-    const { details } = props;
-
+function PersonalDetails({details}) {
+    
     return (
         <div className={"personalDetilsSection"}>
             <h3 id={"fullName"}>{details.fullName}</h3>
@@ -13,21 +11,14 @@ function PersonalDetails(props) {
 
 
 
-export function ResumeBody() {
+export function ResumeBody({details}) {
 
-    const details = {
-        fullName: "Chijiuba Victory",
-        address: "Ikeja, Lagos Nigeria",
-        phoneNumber: "+234 8132547926",
-        email: "chijiubaonyedikachukwu@gmail.com",
-        linkedInProfile: "www.linkedin.com/in/chijiubavictory",
-        profileSummary: "A Computer Science graduate with fundamental knowledge of software design and development. Seeking to utilize broadeducational background with excellent analytical, technical, and programming skills to thrive as software engineer."
-    }
+    const personalDetails = details;
 
     return (
         <section className="resumebody">
 
-            <PersonalDetails details={details}/>
+            <PersonalDetails details={personalDetails} />
 
             <div className={"resumeSections"}>
                 <h3>EDUCATION</h3>
