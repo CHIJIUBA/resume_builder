@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {personalDetails, educationDetails} from "./data"
+import {personalDetails, educationDetails, resumeInputsDetails} from "./data"
 import { ResumeBody } from './ResumeBody';
 
 function LabelInput({label, inputId, handlerFunction}) {
@@ -26,37 +26,14 @@ export function SideNav() {
     const [fullName, setPersonalDetails] = useState(personalDetails);
 
     function handlePersonalDetails(e) {
-        switch (e.target.id) {
 
-            case "fullNameInput":
-                personalDetails.fullName = e.target.value;
-                setPersonalDetails(personalDetails.fullName);
-                break;
-            case "addressInput":
-                personalDetails.address = e.target.value;
-                setPersonalDetails(personalDetails.address);
-                break;
-            case "emailInput":
-                personalDetails.email = e.target.value;
-                setPersonalDetails(personalDetails.email);
-                break;
-            case "phoneNumber":
-                personalDetails.phoneNumber = e.target.value;
-                setPersonalDetails(personalDetails.phoneNumber);
-                break;
-            case "summaryInput":
-                personalDetails.profileSummary = e.target.value;
-                setPersonalDetails(personalDetails.profileSummary);
-                break;
-            case "linkedinput":
-                personalDetails.linkedInProfile = e.target.value;
-                setPersonalDetails(personalDetails.linkedInProfile);
-                break;
-            case "schoolInput":
-                educationDetails.school = e.target.value;
-                setPersonalDetails(educationDetails.school);
-                break;
-        }
+        /**
+         * this function changes the corresponding resume field in accordance
+         * to the input field controlling it
+         */
+        personalDetails[resumeInputsDetails[e.target.id]] = e.target.value;
+        setPersonalDetails(personalDetails[resumeInputsDetails[e.target.id]]);
+
     }
 
     
