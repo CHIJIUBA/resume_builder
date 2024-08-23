@@ -30,14 +30,14 @@ export function ResumeBody({details, education}) {
                 <div className={"innerSections"}>
                     <section>
                         <h3 className="institution">{education.school}</h3>
-                        <p>Bachelor of Science in Computer Science (BSC) </p>
+                        <p>{education.degree}</p>
                     </section>
                     <section>
-                        <h3>Nsukka, Enugu</h3>
-                        <p><i>Nov 2017 - Nov 2022</i></p>
+                        <h3>{education.location}</h3>
+                        <p><i>{education.eduStartDate} - {education.eduEndDate}</i></p>
                     </section>
                 </div>
-                <p id="courseWork"><b>Relevant Coursework: </b>Python Programming, Java, Data Structures, Object-Oriented Design, Database Management Systems, Computer Organization & Architecture, SoftwareEngineering Process Management, Enterprise Software Overview, Software Quality Testing</p>
+                <p id="courseWork"><b>Relevant Coursework: </b>{education.courseWork}</p>
             </div>
 
             <div className={"resumeSections"}>

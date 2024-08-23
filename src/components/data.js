@@ -21,8 +21,8 @@ export const educationDetails = {
 
     school: "University of Nigeria",
     degree: "Bachelor of Science in Computer Science (BSC)",
-    startDate: "Nov 2017",
-    endDate: "Nov 2022",
+    eduStartDate: "Nov 2017",
+    eduEndDate: "Nov 2022",
     location: "Nsukka, Enugu",
     courseWork: " Python Programming, Java, Data Structures, Object-Oriented Design, Database Management Systems, Computer Organization & Architecture, SoftwareEngineering Process Management, Enterprise Software Overview, Software Quality Testing"
 }
@@ -39,5 +39,11 @@ export const resumeInputsDetails = {
     phoneNumber: "phoneNumber",
     summaryInput: "profileSummary",
     linkedinput: "linkedInProfile",
-    schoolInput: "school"
+    schoolInput: "school",
+    degreeInput: "degree",
+    locationInput: "location",
+    courseWorkInput: "courseWork",
+    startEdDateInput: "eduStartDate",
+    endEdDateInput: "eduEndDate"
+
 }

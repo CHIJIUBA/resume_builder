@@ -26,13 +26,18 @@ export function SideNav() {
     const [fullName, setPersonalDetails] = useState(personalDetails);
 
     function handlePersonalDetails(e) {
-
         /**
          * this function changes the corresponding resume field in accordance
          * to the input field controlling it
          */
-        personalDetails[resumeInputsDetails[e.target.id]] = e.target.value;
-        setPersonalDetails(personalDetails[resumeInputsDetails[e.target.id]]);
+        if(resumeInputsDetails[e.target.id] in personalDetails) {
+            personalDetails[resumeInputsDetails[e.target.id]] = e.target.value;
+            setPersonalDetails(personalDetails[resumeInputsDetails[e.target.id]]);
+        }
+        else if(resumeInputsDetails[e.target.id] in educationDetails) {
+            educationDetails[resumeInputsDetails[e.target.id]] = e.target.value;
+            setPersonalDetails(educationDetails[resumeInputsDetails[e.target.id]]);
+        }
 
     }
 
@@ -55,11 +60,11 @@ export function SideNav() {
             <div className={"personaldetails"}>
                 <h3>Education</h3>
                 <LabelInput  label={"School"} inputId={"schoolInput"}  handlerFunction={handlePersonalDetails}/>
-                <LabelInput  label={"Degree"} inputId={"degreeInput"} />
-                <LabelInput  label={"Start Date"} inputId={"startEdDateInput"} />
-                <LabelInput  label={"End Date"} inputId={"endEdDateInput"} />
-                <LabelInput  label={"Location"} inputId={"locationInput"} />
-                <LabelInput  label={"Relevant CourseWork"} inputId={"courseWorkInput"} />
+                <LabelInput  label={"Degree"} inputId={"degreeInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Start Date"} inputId={"startEdDateInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"End Date"} inputId={"endEdDateInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Location"} inputId={"locationInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Relevant CourseWork"} inputId={"courseWorkInput"} handlerFunction={handlePersonalDetails}/>
             </div>
 
             <div className={"personaldetails"}>
