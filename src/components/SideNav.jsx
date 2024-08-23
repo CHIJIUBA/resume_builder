@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {personalDetails} from "./data"
+import {personalDetails, educationDetails} from "./data"
 import { ResumeBody } from './ResumeBody';
 
 function LabelInput({label, inputId, handlerFunction}) {
@@ -24,6 +24,7 @@ function LabelTextArea({label, inputId}) {
 export function SideNav() {
 
     const [fullName, setPersonalDetails] = useState(personalDetails);
+    const [education, setEducationDetails] = useState(educationDetails);
 
     function handlePersonalDetails(e) {
         switch (e.target.id) {
@@ -54,6 +55,37 @@ export function SideNav() {
                 break;
         }
     }
+
+    function handleEducationDetails(e){
+        switch (e.target.id) {
+
+            case "schoolInput":
+                educationDetails.school = e.target.value;
+                setPersonalDetails(educationDetails.school);
+                break;
+            case "addressInput":
+                personalDetails.address = e.target.value;
+                setPersonalDetails(personalDetails.address);
+                break;
+            case "emailInput":
+                personalDetails.email = e.target.value;
+                setPersonalDetails(personalDetails.email);
+                break;
+            case "phoneNumber":
+                personalDetails.phoneNumber = e.target.value;
+                setPersonalDetails(personalDetails.phoneNumber);
+                break;
+            case "summaryInput":
+                personalDetails.profileSummary = e.target.value;
+                setPersonalDetails(personalDetails.profileSummary);
+                break;
+            case "linkedinput":
+                personalDetails.linkedInProfile = e.target.value;
+                setPersonalDetails(personalDetails.linkedInProfile);
+                break;
+        }
+
+    }
         
 
     return(
@@ -71,11 +103,12 @@ export function SideNav() {
 
             <div className={"personaldetails"}>
                 <h3>Education</h3>
-                <LabelInput  label={"School"} inputId={"schoolInput"} />
-                <LabelInput  label={"Degree"} inputId={"degreeInput"} />
-                <LabelInput  label={"Start Date"} inputId={"startEdDateInput"} />
-                <LabelInput  label={"End Date"} inputId={"endEdDateInput"} />
-                <LabelInput  label={"Location"} inputId={"locationInput"} />
+                <LabelInput  label={"School"} inputId={"schoolInput"}  handlerFunction={handleEducationDetails}/>
+                <LabelInput  label={"Degree"} inputId={"degreeInput"} handlerFunction={handleEducationDetails}/>
+                <LabelInput  label={"Start Date"} inputId={"startEdDateInput"} handlerFunction={handleEducationDetails}/>
+                <LabelInput  label={"End Date"} inputId={"endEdDateInput"} handlerFunction={handleEducationDetails}/>
+                <LabelInput  label={"Location"} inputId={"locationInput"} handlerFunction={handleEducationDetails}/>
+                <LabelInput  label={"Relevant CourseWork"} inputId={"courseWorkInput"} handlerFunction={handleEducationDetails}/>
             </div>
 
             <div className={"personaldetails"}>
@@ -88,7 +121,7 @@ export function SideNav() {
                 <LabelTextArea label={"Description"} inputId={"expDescription"} />
             </div>
         </section>
-        <ResumeBody details={personalDetails} />
+        <ResumeBody details={personalDetails} education={educationDetails}/>
         </>
     )
 }

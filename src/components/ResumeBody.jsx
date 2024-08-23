@@ -9,11 +9,16 @@ function PersonalDetails({details}) {
     )
 }
 
+function EducationDetails() {
+    return (console.log("hello world"));
+}
 
 
-export function ResumeBody({details}) {
+
+export function ResumeBody({details, education}) {
 
     const personalDetails = details;
+    // const educationDetails = education;
 
     return (
         <section className="resumebody">
@@ -24,7 +29,7 @@ export function ResumeBody({details}) {
                 <h3>EDUCATION</h3>
                 <div className={"innerSections"}>
                     <section>
-                        <h3 className="institution">University of Nigeria</h3>
+                        <h3 className="institution">{education.school}</h3>
                         <p>Bachelor of Science in Computer Science (BSC) </p>
                     </section>
                     <section>
