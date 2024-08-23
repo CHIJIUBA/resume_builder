@@ -26,18 +26,32 @@ export function SideNav() {
     const [fullName, setPersonalDetails] = useState(personalDetails);
 
     function handlePersonalDetails(e) {
+        switch (e.target.id) {
 
-        if(e.target.id == "fullNameInput"){
-            personalDetails.fullName = e.target.value;
-            setPersonalDetails(personalDetails.fullName);
-        }
-        else if(e.target.id == "addressInput"){
-            personalDetails.address = e.target.value;
-            setPersonalDetails(personalDetails.address);
-        }
-        else if(e.target.id == "emailInput"){
-            personalDetails.email = e.target.value;
-            setPersonalDetails(personalDetails.email);
+            case "fullNameInput":
+                personalDetails.fullName = e.target.value;
+                setPersonalDetails(personalDetails.fullName);
+                break;
+            case "addressInput":
+                personalDetails.address = e.target.value;
+                setPersonalDetails(personalDetails.address);
+                break;
+            case "emailInput":
+                personalDetails.email = e.target.value;
+                setPersonalDetails(personalDetails.email);
+                break;
+            case "phoneNumber":
+                personalDetails.phoneNumber = e.target.value;
+                setPersonalDetails(personalDetails.phoneNumber);
+                break;
+            case "summaryInput":
+                personalDetails.profileSummary = e.target.value;
+                setPersonalDetails(personalDetails.profileSummary);
+                break;
+            case "linkedinput":
+                personalDetails.linkedInProfile = e.target.value;
+                setPersonalDetails(personalDetails.linkedInProfile);
+                break;
         }
     }
         
@@ -47,12 +61,12 @@ export function SideNav() {
         <section className={"side-nav"}>
             <div className={"personaldetails"}>
                 <h3>Personal Details</h3>
-                <LabelInput  label={"Full Name"} inputId={"fullNameInput"}  handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Full Name"} inputId={"fullNameInput"}  handlerFunction={handlePersonalDetails} />
                 <LabelInput  label={"Email"} inputId={"emailInput"} handlerFunction={handlePersonalDetails} />
-                <LabelInput  label={"Phone Number"} inputId={"phoneNumber"} />
+                <LabelInput  label={"Phone Number"} inputId={"phoneNumber"} handlerFunction={handlePersonalDetails} />
                 <LabelInput  label={"Address"} inputId={"addressInput"} handlerFunction={handlePersonalDetails} />
-                <LabelInput  label={"Summary"} inputId={"summaryInput"} />
-                <LabelInput  label={"LinkedIn Profile"} inputId={"linkedinput"} />
+                <LabelInput  label={"Summary"} inputId={"summaryInput"} handlerFunction={handlePersonalDetails} />
+                <LabelInput  label={"LinkedIn Profile"} inputId={"linkedinput"} handlerFunction={handlePersonalDetails} />
             </div>
 
             <div className={"personaldetails"}>
