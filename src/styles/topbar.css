@@ -264,7 +264,7 @@ label {
       left: 0;
       top: 0;
       /* Hide scrollbar while allowing scrolling  during printing of page*/
-      overflow: auto;
+      overflow: visible;
       scrollbar-width: none;  /* Firefox */
       -ms-overflow-style: none
     }
