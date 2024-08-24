@@ -45,6 +45,34 @@ export const experienceDetails = {
     
 }
 
+export const skillsDetails = {
+    /***
+     * this objects contains the data fields for the 
+     * professional experience section of the resume
+     */
+
+    skills: [
+        "Microsoft Excel, Microsoft Word, Visual Studio Code and Postman",
+        "Python, Java, C, HTML, CSS, JavaScript, Linux, API Development Fastapi",
+        "Communication, Problem-solving, Teamwork, Adaptability"
+    ]
+}
+
+export const projectsDetails = {
+    /***
+     * this objects contains the data fields for the 
+     * professional experience section of the resume
+     */
+
+    name: "Online Payment Application",
+    link: "https://github.com/CHIJIUBA/Payment-Application-VioPay",
+    description: "Online payment application that enables users to make secure and seamless online transactions.",
+    achievements: [
+        "Developed dynamic components for the app and created a new landing page that streamlined customer experience",
+        "Learned to connect and use MySQL in PHP and integrate Flutterwave APIs for seamless payment processing",
+    ]
+}
+
 export const resumeInputsDetails = {
     /**
      * This objects maps the id of the inputs to the data
@@ -73,5 +101,12 @@ export const resumeInputsDetails = {
     exstartDateInput: "exStartDate",
     exendExDateInput: "exEndDate",
     exlocationInput: "exLocation",
-    expDescriptionInput: "expDescription"
+    expDescriptionInput: "expDescription",
+    skillDescriptionInput: "skills",
+
+    /*for the projects details fields*/
+    projectNameInput: "name",
+    projectLinkInput: "link",
+    projectDescriptionInput: "description",
+    projectAchievementsInput: "achievements"
 }

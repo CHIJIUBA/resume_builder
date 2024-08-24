@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {personalDetails, educationDetails, resumeInputsDetails, experienceDetails} from "./data"
+import {personalDetails, educationDetails, resumeInputsDetails, experienceDetails, skillsDetails, projectsDetails} from "./data"
 import { ResumeBody } from './ResumeBody';
 
 function LabelInput({label, inputId, handlerFunction}) {
@@ -24,7 +24,6 @@ function LabelTextArea({label, inputId, handlerFunction}) {
 export function SideNav() {
     
     const [fullName, setPersonalDetails] = useState(personalDetails);
-    // console.log(experienceDetails["expDescription"][0]);
 
     function handlePersonalDetails(e) {
         /**
@@ -46,14 +45,16 @@ export function SideNav() {
 
     }
 
-    function getText(){
-        let text = document.querySelector("#expDescriptionInput").value;
-        console.log(text.split('\n'));
-    }
-
     function handleLists(e){
-        experienceDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
-        setPersonalDetails(experienceDetails[resumeInputsDetails[e.target.id]]);
+
+        if (resumeInputsDetails[e.target.id] in experienceDetails){
+            experienceDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
+            setPersonalDetails(experienceDetails[resumeInputsDetails[e.target.id]]);
+        }
+        else if(resumeInputsDetails[e.target.id] in skillsDetails) {
+            skillsDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
+            setPersonalDetails(skillsDetails[resumeInputsDetails[e.target.id]]);
+        }
     }
 
     return(
@@ -91,10 +92,18 @@ export function SideNav() {
 
             <div className={"personaldetails"}>
                 <h3>Additional Skills</h3>
-                <LabelTextArea label={"Description"} inputId={"skillDescription"} />
+                <LabelTextArea label={"Skills List"} inputId={"skillDescriptionInput"}  handlerFunction={handleLists}/>
+            </div>
+
+            <div className={"personaldetails"}>
+                <h3>Project</h3>
+                <LabelInput  label={"Project Name"} inputId={"projectNameInput"}/>
+                <LabelInput  label={"Project Link"} inputId={"projectLinkInput"} />
+                <LabelInput  label={"Project Description"} inputId={"projectDescriptionInput"} />
+                <LabelTextArea label={"Project Achievements"} inputId={"projectAchievementsInput"} />
             </div>
         </section>
-        <ResumeBody details={personalDetails} education={educationDetails} experience={experienceDetails}/>
+        <ResumeBody details={personalDetails} education={educationDetails} experience={experienceDetails} skills={skillsDetails} projects={projectsDetails}/>
         </>
     )
 }
