@@ -1,8 +1,5 @@
-import { useState } from 'react'
 import { TopBar } from './components/TopBar'
 import { SideNav } from './components/SideNav'
-import { ResumeBody } from "./components/ResumeBody"
-import './App.css'
 
 function App() {
 
