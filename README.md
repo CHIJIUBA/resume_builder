@@ -1,6 +1,6 @@
 # Resume Builder
-# Author: Chijiuba Victory
-# Email: chijiubaonyedikachukwu@gmail.com
+## Author: Chijiuba Victory
+### Email: chijiubaonyedikachukwu@gmail.com
 
 This projects is a Resume builder, it is use to build and print a professional CV/Resume.
 
