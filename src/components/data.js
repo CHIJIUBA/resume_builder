@@ -27,23 +27,51 @@ export const educationDetails = {
     courseWork: " Python Programming, Java, Data Structures, Object-Oriented Design, Database Management Systems, Computer Organization & Architecture, SoftwareEngineering Process Management, Enterprise Software Overview, Software Quality Testing"
 }
 
+export const experienceDetails = {
+    /***
+     * this objects contains the data fields for the 
+     * professional experience section of the resume
+     */
+    company: "Strabic Construction Company",
+    positionTitle: "Information Technology Officer",
+    exStartDate: "Aug 2023",
+    exEndDate: "Jun 2024",
+    exLocation: "Ikeja, Lagos",
+    expDescription: [
+        "Oversaw the installation, configuration, and maintenance of hardware and Project.", 
+        "Managed servers, networks, and other IT infrastructure to ensure smooth and secure operation.", 
+        "Provided technical support to employees, troubleshooting hardware and software issues, and resolving IT-related problems."
+    ],
+    
+}
+
 export const resumeInputsDetails = {
     /**
      * This objects maps the id of the inputs to the data
      * field that they manipulate
      */
 
+    /*for the personal details fields*/
     fullNameInput: "fullName",
     addressInput: "address",
     emailInput: "email",
     phoneNumber: "phoneNumber",
     summaryInput: "profileSummary",
     linkedinput: "linkedInProfile",
+
+    /*for the education details fields*/
     schoolInput: "school",
     degreeInput: "degree",
     locationInput: "location",
     courseWorkInput: "courseWork",
     startEdDateInput: "eduStartDate",
-    endEdDateInput: "eduEndDate"
+    endEdDateInput: "eduEndDate",
 
+    /*for the experience details fields*/
+    companyInput: "company",
+    positionTitleInput: "positionTitle",
+    exstartDateInput: "exStartDate",
+    exendExDateInput: "exEndDate",
+    exlocationInput: "exLocation",
+    expDescriptionInput: "expDescription"
 }

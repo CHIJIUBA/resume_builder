@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {personalDetails, educationDetails, resumeInputsDetails} from "./data"
+import {personalDetails, educationDetails, resumeInputsDetails, experienceDetails} from "./data"
 import { ResumeBody } from './ResumeBody';
 
 function LabelInput({label, inputId, handlerFunction}) {
@@ -11,19 +11,20 @@ function LabelInput({label, inputId, handlerFunction}) {
     )
 }
 
-function LabelTextArea({label, inputId}) {
+function LabelTextArea({label, inputId, handlerFunction}) {
     return (
         <>
             <label htmlFor={inputId}>{label}</label>
-            <textarea id={inputId}></textarea>
+            <textarea id={inputId} onInput={handlerFunction}></textarea>
         </>
     )
 }
 
 
 export function SideNav() {
-
+    
     const [fullName, setPersonalDetails] = useState(personalDetails);
+    // console.log(experienceDetails["expDescription"][0]);
 
     function handlePersonalDetails(e) {
         /**
@@ -38,7 +39,21 @@ export function SideNav() {
             educationDetails[resumeInputsDetails[e.target.id]] = e.target.value;
             setPersonalDetails(educationDetails[resumeInputsDetails[e.target.id]]);
         }
+        else if(resumeInputsDetails[e.target.id] in experienceDetails) {
+            experienceDetails[resumeInputsDetails[e.target.id]] = e.target.value;
+            setPersonalDetails(experienceDetails[resumeInputsDetails[e.target.id]]);
+        }
 
+    }
+
+    function getText(){
+        let text = document.querySelector("#expDescriptionInput").value;
+        console.log(text.split('\n'));
+    }
+
+    function handleLists(e){
+        experienceDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
+        setPersonalDetails(experienceDetails[resumeInputsDetails[e.target.id]]);
     }
 
     return(
@@ -65,16 +80,21 @@ export function SideNav() {
             </div>
 
             <div className={"personaldetails"}>
-                <h3>Experience</h3>
-                <LabelInput  label={"Company"} inputId={"company"} />
-                <LabelInput  label={"Position Title"} inputId={"positionTitleInput"} />
-                <LabelInput  label={"Start Date"} inputId={"startDateInput"} />
-                <LabelInput  label={"End Date"} inputId={"endExDateInput"} />
-                <LabelInput  label={"Location"} inputId={"LocationInput"} />
-                <LabelTextArea label={"Description"} inputId={"expDescription"} />
+                <h3>Profesional Experience</h3>
+                <LabelInput  label={"Company"} inputId={"companyInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Position Title"} inputId={"positionTitleInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Start Date"} inputId={"exstartDateInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"End Date"} inputId={"exendExDateInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Location"} inputId={"exlocationInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelTextArea label={"Duty Descriptions"} inputId={"expDescriptionInput"}  handlerFunction={handleLists}/>
+            </div>
+
+            <div className={"personaldetails"}>
+                <h3>Additional Skills</h3>
+                <LabelTextArea label={"Description"} inputId={"skillDescription"} />
             </div>
         </section>
-        <ResumeBody details={personalDetails} education={educationDetails}/>
+        <ResumeBody details={personalDetails} education={educationDetails} experience={experienceDetails}/>
         </>
     )
 }

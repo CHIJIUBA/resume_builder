@@ -32,9 +32,10 @@ function EducationDetails({details}) {
 
 
 
-export function ResumeBody({details, education}) {
+export function ResumeBody({details, education, experience}) {
 
     const personalDetails = details;
+    // console.log(experience.expDescription.split("|"))
 
     return (
         <section id={"resumebody"}>
@@ -46,19 +47,18 @@ export function ResumeBody({details, education}) {
                 <h3>PROFESSIONAL EXPERIENCE</h3>
                 <div className={"innerSections"}>
                     <section>
-                        <h3 className="institution">Strabic Construction Company</h3>
-                        <p>Information Technology Officer</p>
+                        <h3 className="institution">{experience.company}</h3>
+                        <p>{experience.positionTitle}</p>
                     </section>
                     <section>
-                        <h3>Nsukka, Enugu</h3>
-                        <p><i>Nov 2017 - Nov 2022</i></p>
+                        <h3>{experience.exLocation}</h3>
+                        <p><i>{experience.exStartDate} - {experience.exEndDate}</i></p>
                     </section>
                 </div>
                 <ul className={"listOfDuties"}>
-                    <li>Oversaw the installation, configuration, and maintenance of hardware and software.</li>
-                    <li>Managed servers, networks, and other IT infrastructure to ensure smooth and secure operation.</li>
-                    <li>Provided technical support to employees, troubleshooting hardware and software issues, and resolving
-                    IT-related problems.</li>
+                {experience.expDescription.map((duty, index) => {
+                    return <li key={index}>{duty}</li>;
+                    })}
                 </ul>
 
                 <div className={"innerSections"}>

@@ -145,10 +145,6 @@ input {
     padding: 5px;
 }
 
-/* input:focus {
-    border: none;
-} */
-
 textarea:focus, input:focus{
     outline: none;
     border: 1px solid #3366cc;
@@ -164,11 +160,16 @@ textarea {
     margin: 10px 0px;
     border: 1px solid #e6e6e6;
     height: 50px;
+    padding: 5px;
+    resize: none;
+    height: 100px;
+
 }
 
 label {
     font-size: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #3366cc;
 }
 
 .personaldetails {
