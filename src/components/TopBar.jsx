@@ -21,7 +21,7 @@ export function TopBar() {
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
-                    <li><button className={"downloadButton"} onClick={printSpecificArea}>Print Resume</button></li>
+                    <li><button className={"downloadButton"} onClick={printSpecificArea}>Download Resume</button></li>
                 </ul>
             </div>
         </nav>
