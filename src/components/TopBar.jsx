@@ -1,5 +1,10 @@
 export function TopBar() {
 
+    function printSpecificArea() {
+        // console.log("I was called");
+        window.print();
+    }
+
     return (
         <nav className={"navbar"}>
             <div className={"brand-title"}>
@@ -16,7 +21,7 @@ export function TopBar() {
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
-                    <li><a href={"#"}></a></li>
+                    <li><button className={"downloadButton"} onClick={printSpecificArea}>Download</button></li>
                 </ul>
             </div>
         </nav>

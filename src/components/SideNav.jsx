@@ -14,8 +14,8 @@ function LabelInput({label, inputId, handlerFunction}) {
 function LabelTextArea({label, inputId}) {
     return (
         <>
-        <label htmlFor={inputId}>{label}</label>
-        <textarea id={inputId}></textarea>
+            <label htmlFor={inputId}>{label}</label>
+            <textarea id={inputId}></textarea>
         </>
     )
 }

@@ -37,7 +37,7 @@ export function ResumeBody({details, education}) {
     const personalDetails = details;
 
     return (
-        <section className="resumebody">
+        <section id={"resumebody"}>
 
             <PersonalDetails details={personalDetails} />
             <EducationDetails details={education} />
