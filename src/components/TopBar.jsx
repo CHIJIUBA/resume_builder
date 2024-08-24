@@ -28,6 +28,4 @@ export function TopBar() {
     )
 
 }
-
-{/* <i class="devicon-electron-original"></i> */}
           
