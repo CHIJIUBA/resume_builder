@@ -250,4 +250,30 @@ label {
     font-size: 16px;
 }
 
+@media print {
+    body * {
+      visibility: hidden; /* Hide everything initially */
+    }
+    #resumebody, #resumebody * {
+      visibility: visible; /* Show the print area */
+    }
+    #resumebody {
+      position: absolute;
+      width: 100vw;
+      padding: 0px;
+      left: 0;
+      top: 0;
+      /* Hide scrollbar while allowing scrolling  during printing of page*/
+      overflow: auto;
+      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none
+    }
+
+    /* Hide scrollbar while allowing scrolling  during printing of page for Chrome, Safari, and Opera*/
+    #resumebody::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+  }
+
 /* end of the resume body styling */
+  

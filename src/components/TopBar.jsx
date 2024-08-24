@@ -1,7 +1,7 @@
 export function TopBar() {
 
     function printSpecificArea() {
-        // console.log("I was called");
+
         window.print();
     }
 
@@ -21,7 +21,7 @@ export function TopBar() {
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
                     <li><a href={"#"}></a></li>
-                    <li><button className={"downloadButton"} onClick={printSpecificArea}>Download</button></li>
+                    <li><button className={"downloadButton"} onClick={printSpecificArea}>Print Resume</button></li>
                 </ul>
             </div>
         </nav>
