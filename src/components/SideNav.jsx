@@ -42,6 +42,10 @@ export function SideNav() {
             experienceDetails[resumeInputsDetails[e.target.id]] = e.target.value;
             setPersonalDetails(experienceDetails[resumeInputsDetails[e.target.id]]);
         }
+        else if(resumeInputsDetails[e.target.id] in projectsDetails) {
+            projectsDetails[resumeInputsDetails[e.target.id]] = e.target.value;
+            setPersonalDetails(projectsDetails[resumeInputsDetails[e.target.id]]);
+        }
 
     }
 
@@ -54,6 +58,10 @@ export function SideNav() {
         else if(resumeInputsDetails[e.target.id] in skillsDetails) {
             skillsDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
             setPersonalDetails(skillsDetails[resumeInputsDetails[e.target.id]]);
+        }
+        else if(resumeInputsDetails[e.target.id] in projectsDetails) {
+            projectsDetails[resumeInputsDetails[e.target.id]] = e.target.value.split("\n");
+            setPersonalDetails(projectsDetails[resumeInputsDetails[e.target.id]]);
         }
     }
 
@@ -97,10 +105,10 @@ export function SideNav() {
 
             <div className={"personaldetails"}>
                 <h3>Project</h3>
-                <LabelInput  label={"Project Name"} inputId={"projectNameInput"}/>
-                <LabelInput  label={"Project Link"} inputId={"projectLinkInput"} />
-                <LabelInput  label={"Project Description"} inputId={"projectDescriptionInput"} />
-                <LabelTextArea label={"Project Achievements"} inputId={"projectAchievementsInput"} />
+                <LabelInput  label={"Project Name"} inputId={"projectNameInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Project Link"} inputId={"projectLinkInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelInput  label={"Project Description"} inputId={"projectDescriptionInput"} handlerFunction={handlePersonalDetails}/>
+                <LabelTextArea label={"Project Achievements"} inputId={"projectAchievementsInput"} handlerFunction={handleLists}/>
             </div>
         </section>
         <ResumeBody details={personalDetails} education={educationDetails} experience={experienceDetails} skills={skillsDetails} projects={projectsDetails}/>
