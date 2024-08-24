@@ -1,6 +1,7 @@
 # Resume Builder
 ## Author: Chijiuba Victory
 ### Email: chijiubaonyedikachukwu@gmail.com
+#### Technologies: HTML, CSS, JavaScript, React.js
 
 This projects is a Resume builder, it is use to build and print a professional CV/Resume.
 
